@@ -4,4 +4,4 @@
 
 ## 主题预览
 
-![Light theme](./example/themes/default/static/screen.png)
+![Light theme](./themes/default/screen.png)
