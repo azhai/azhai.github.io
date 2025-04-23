@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+*.bak
+*.log
+*.so
+*.sublime-project
+*.sublime-workspace
+*.tmp
+*.txt
+*.vscode
+fountain
+fountain.exe
+tests/

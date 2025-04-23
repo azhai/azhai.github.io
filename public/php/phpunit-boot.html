@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh" class="h-100">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="robots" content="index,follow">
+
+<script src="../static/js/color-modes.js"></script>
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="icon" type="image/svg+xml" href="../static/images/favicon.png">
+
+    <link rel="stylesheet" href="../static/css/dracula.css">
+    <title>启动PHPUnit测试的简便方式 | 阿债的技术存档</title>
+</head>
+<body class="bg-body d-flex flex-column h-100">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+    <symbol id="three-dots" viewBox="0 0 16 16">
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+    </symbol>
+    <symbol id="github" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+    </symbol>
+</svg>
+
+<nav class="navbar navbar-expand-lg fixed-top border-bottom theme-bg" data-bs-theme="dark">
+    <div class="container">
+      <button id="btn-sidebar" class="navbar-toggler p-2 me-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#ft-guide-chapters" aria-controls="ft-guide-chapters" aria-label="边栏">
+            <svg class="bi"><use href="#list"></use></svg>
+            <span class="d-none fs-6 pe-1">查看</span>
+        </button>
+        <a class="navbar-brand" href="/" aria-label="回首页"><img src="../static/images/logo.svg" alt="" width="30" height="24">阿债的技术存档</a>
+        <button class="ms-auto navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#ft-offcanvas-navbar" aria-controls="ft-offcanvas-navbar" aria-label="导航">
+            <svg class="bi"><use href="#three-dots"></use></svg>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="ft-offcanvas-navbar" aria-labelledby="ft-offcanvas-navbar-label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="ft-offcanvas-navbar-label">阿债的技术存档</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <ul id="site-channels" class="navbar-nav flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/help.html">帮助</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/about.html">关于</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" aria-label="GitHub">
+                            <svg class="bi"><use href="#github"></use></svg><span class="d-lg-none ms-2">GitHub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+                                id="ft-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="主题">
+                            <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg>
+                            <span class="d-lg-none ms-2" id="ft-theme-text">切换主题</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-xxl-start">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <svg class="bi me-2"><use href="#sun-fill"></use></svg>浅色主题
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <svg class="bi me-2"><use href="#moon-stars-fill"></use></svg>深色主题
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                    <svg class="bi me-2"><use href="#circle-half"></use></svg>跟随浏览器
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<main><div class="container">
+    <div class="row">
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="ft-guide-chapters-label">边栏</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#ft-guide-chapters"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <nav class="w-100 guide-chapters" aria-label="文章列表">
+
+<ul class="mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+            
+            <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+            
+            <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+            
+            <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+            
+            <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+            
+            <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+            
+            <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+            
+            <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+            
+            <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+            
+            <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+            
+            <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+            
+            <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+            
+            <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+            
+            <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+            
+            <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+            
+            <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+            
+            <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+            
+            <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+            
+            <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+            
+            <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+            
+            <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+            
+            <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+            
+            <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+            
+            <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+            
+            <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+            
+            <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+            
+            <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+            
+            <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+            
+        </ul>
+    </li>
+    
+</ul>
+
+        </nav>
+    </div>
+</div>
+
+
+      <aside class="d-none d-lg-block mt-3 me-xxl-5 col-auto sticky-sidebar">
+        <nav class="w-100 guide-chapters" aria-label="文章列表">
+
+      <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+                  
+                  <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+                  
+                  <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+                  
+                  <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+                  
+                  <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+                  
+                  <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+                  
+                  <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+                  
+                  <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+                  
+                  <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+                  
+                  <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+                  
+                  <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+                  
+                  <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+                  
+                  <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+                  
+                  <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+                  
+                  <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+                  
+                  <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+                  
+                  <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+                  
+                  <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+                  
+                  <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+                  
+                  <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+                  
+                  <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+                  
+                  <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+                  
+                  <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+                  
+                  <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+                  
+                  <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+                  
+                  <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+                  
+                  <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+                  
+                  <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+                  
+              </ul>
+          </li>
+          
+      </ul>
+
+          </nav>
+      </aside>
+
+        <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc" data-bs-offset="0" tabindex="0">
+            <h1 class="post-title">启动PHPUnit测试的简便方式</h1>
+
+            <div class="post-meta">
+                
+                <div>
+                作者 <img width="32" height="32" alt=""
+                    class="post-avatar" src="../static/avatars/ryan.jpg" />
+                <span class="post-author">Ryan Liu</span>
+                
+                发表于 <span class="post-date">2014-04-10</span>
+                </div>
+                <div>标签 
+                <span class="tags">
+                    <a class="post-tag" href="../tags/phpunit.html">phpunit</a>
+                
+                    <a class="post-tag" href="../tags/console.html">console</a>
+                </span>
+                </div>
+            </div>
+
+            <div class="post-body">
+            <nav>
+
+<ul>
+<li>
+<ul>
+<li><a href="#toc_0">问题描述</a></li>
+
+<li><a href="#toc_1">解决方案</a></li>
+</ul></li>
+</ul>
+
+</nav>
+
+<h2 id="toc_0">问题描述</h2>
+
+<p>在命令行下，不管当前目录在哪儿，都可以简单地启动一个项目的PHPUnit测试。</p>
+
+<p>具体一点，我们的项目名为proj，其下有个测试目录tests，测试Namespace为ProjTest。</p>
+
+<h2 id="toc_1">解决方案</h2>
+
+<p>通常我们要进入proj/tests/目录，然后运行类似下面的命令</p>
+
+<pre><code class="language-bash">cd /path/to/proj/tests/
+phpunit --bootstrap bootstrap.php ProjTest
+</code></pre>
+
+<p>如果能做到象下面这样，不是更傻瓜化吗？</p>
+
+<pre><code class="language-bash">chmod +x /path/to/proj/tests/bootstrap.php #第一次运行时
+/path/to/proj/tests/bootstrap.php
+</code></pre>
+
+<p>第一步，很容易想到，用xml配置bootstrap和Namespace，下面proj/tests/config.xml是个简化版本</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;phpunit stopOnFailure=&quot;false&quot; bootstrap=&quot;bootstrap.php&quot;&gt;
+    &lt;testsuites&gt;
+        &lt;testsuite name=&quot;ProjTest&quot;&gt;
+            &lt;directory&gt;ProjTest&lt;/directory&gt;
+        &lt;/testsuite&gt;
+    &lt;/testsuites&gt;
+    &lt;logging&gt;
+        &lt;log type=&quot;json&quot; target=&quot;./runtime/logs.json&quot;/&gt;
+    &lt;/logging&gt;
+    &lt;php&gt;
+        &lt;var name=&quot;DB_DSN&quot; value=&quot;mysql:host=127.0.0.1;charset=utf8&quot; /&gt;
+        &lt;var name=&quot;DB_USER&quot; value=&quot;dba&quot; /&gt;
+        &lt;var name=&quot;DB_PASSWD&quot; value=&quot;password&quot; /&gt;
+        &lt;var name=&quot;DB_DBNAME&quot; value=&quot;db_test&quot; /&gt;
+        &lt;var name=&quot;DB_TBLPRE&quot; value=&quot;t_&quot; /&gt;
+    &lt;/php&gt;
+&lt;/phpunit&gt;
+</code></pre>
+
+<p>第二步，改造bootstrap.php，这个需要打开phpunit文件，才知道要使用类PHPUnit_TextUI_Command</p>
+
+<pre><code class="language-php">#!/usr/bin/env phpunit
+&lt;?php
+
+//--------------------------
+//这里是bootstrap代码
+//--------------------------
+
+if ($_SERVER['argc'] &lt;= 2) { #/usr/local/bin/phpunit ./bootstrap.php
+    //运行测试，相当于命令行下 phpunit -c config.xml
+    $phpunit = new \PHPUnit_TextUI_Command();
+    $phpunit-&gt;run(array('-c', __DIR__ . '/config.xml'));
+}
+</code></pre>
+
+            <div>
+        </div>
+
+    </div>
+</div></main>
+
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+(() => {
+    'use strict'
+
+    document.querySelectorAll("#article-nav a.art-link").forEach(element => {
+        let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("php/phpunit-boot.html"))
+        if (url.endsWith("php/phpunit-boot.html")) {
+            // element.classList.add("active")
+            element.style.color = "#f97316"
+        }
+    })
+})()
+</script>
+</body>
+</html>

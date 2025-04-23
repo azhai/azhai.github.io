@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{.Conf.Lang}}" class="h-100">
+<head>
+    {{template "_head.html" .}}
+    <title>{{.Conf.Title}}</title>
+</head>
+<body class="bg-body d-flex flex-column h-100">
+
+{{template "_topbar.html" .}}
+
+<main><div class="container">
+    <div class="row">
+
+      {{template "_sidebar.html" .}}
+
+        <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc" data-bs-offset="0" tabindex="0">
+            {{$urlpre := .UrlPre}}
+            {{range $lnk := .Cata.GetArchives}}
+            <section class="post">
+                <a href="{{$urlpre}}/{{$lnk.Url}}">
+                    <h3 class="item-title">{{$lnk.Title}}</h3>
+                </a>
+                <p class="item-meta">{{$lnk.Note}}</p>
+            </section>
+            {{end}}
+
+            <footer class="site" style="text-align:center">
+                <span style="margin:0 10px">{{.Cata.GetPrev}}</span>
+                <span style="margin:0 10px">{{.Cata.GetNext}}</span>
+            </footer>
+        </div>
+
+    </div>
+</div></main>
+
+<script src="{{.UrlPre}}/static/js/bootstrap.min.js"></script>
+</body>
+</html>

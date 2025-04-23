@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh" class="h-100">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="robots" content="index,follow">
+
+<script src="../static/js/color-modes.js"></script>
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="icon" type="image/svg+xml" href="../static/images/favicon.png">
+
+    <link rel="stylesheet" href="../static/css/dracula.css">
+    <title>GB2312中文转拼音 | 阿债的技术存档</title>
+</head>
+<body class="bg-body d-flex flex-column h-100">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+    </symbol>
+    <symbol id="list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </symbol>
+    <symbol id="three-dots" viewBox="0 0 16 16">
+        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+    </symbol>
+    <symbol id="github" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+    </symbol>
+</svg>
+
+<nav class="navbar navbar-expand-lg fixed-top border-bottom theme-bg" data-bs-theme="dark">
+    <div class="container">
+      <button id="btn-sidebar" class="navbar-toggler p-2 me-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#ft-guide-chapters" aria-controls="ft-guide-chapters" aria-label="边栏">
+            <svg class="bi"><use href="#list"></use></svg>
+            <span class="d-none fs-6 pe-1">查看</span>
+        </button>
+        <a class="navbar-brand" href="/" aria-label="回首页"><img src="../static/images/logo.svg" alt="" width="30" height="24">阿债的技术存档</a>
+        <button class="ms-auto navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#ft-offcanvas-navbar" aria-controls="ft-offcanvas-navbar" aria-label="导航">
+            <svg class="bi"><use href="#three-dots"></use></svg>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="ft-offcanvas-navbar" aria-labelledby="ft-offcanvas-navbar-label">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="ft-offcanvas-navbar-label">阿债的技术存档</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="关闭"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <ul id="site-channels" class="navbar-nav flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/help.html">帮助</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/about.html">关于</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" aria-label="GitHub">
+                            <svg class="bi"><use href="#github"></use></svg><span class="d-lg-none ms-2">GitHub</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+                                id="ft-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="主题">
+                            <svg class="bi my-1 theme-icon-active"><use href="#moon-stars-fill"></use></svg>
+                            <span class="d-lg-none ms-2" id="ft-theme-text">切换主题</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-xxl-start">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <svg class="bi me-2"><use href="#sun-fill"></use></svg>浅色主题
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <svg class="bi me-2"><use href="#moon-stars-fill"></use></svg>深色主题
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                    <svg class="bi me-2"><use href="#circle-half"></use></svg>跟随浏览器
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<main><div class="container">
+    <div class="row">
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="ft-guide-chapters-label">边栏</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#ft-guide-chapters"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <nav class="w-100 guide-chapters" aria-label="文章列表">
+
+<ul class="mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+            
+            <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+            
+            <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+            
+            <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+            
+            <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+            
+            <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+            
+            <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+            
+            <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+            
+            <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+            
+            <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+            
+            <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+            
+            <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+            
+            <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+            
+            <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+            
+            <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+            
+            <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+            
+            <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+            
+            <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+            
+            <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+            
+            <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+            
+            <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+            
+            <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+            
+            <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+            
+            <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+            
+            <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+            
+            <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+            
+            <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+            
+        </ul>
+    </li>
+    
+    <li class="py-2">
+        <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+        <ul class="fw-normal pb-2 small">
+            
+            <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+            
+            <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+            
+        </ul>
+    </li>
+    
+</ul>
+
+        </nav>
+    </div>
+</div>
+
+
+      <aside class="d-none d-lg-block mt-3 me-xxl-5 col-auto sticky-sidebar">
+        <nav class="w-100 guide-chapters" aria-label="文章列表">
+
+      <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+                  
+                  <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+                  
+                  <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+                  
+                  <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+                  
+                  <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+                  
+                  <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+                  
+                  <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+                  
+                  <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+                  
+                  <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+                  
+                  <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+                  
+                  <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+                  
+                  <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+                  
+                  <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+                  
+                  <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+                  
+                  <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+                  
+                  <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+                  
+                  <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+                  
+                  <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+                  
+                  <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+                  
+                  <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+                  
+                  <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+                  
+                  <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+                  
+                  <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+                  
+                  <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+                  
+                  <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+                  
+                  <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+                  
+                  <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+                  
+              </ul>
+          </li>
+          
+          <li class="py-2">
+              <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+              <ul class="fw-normal pb-2 small">
+                  
+                  <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+                  
+                  <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+                  
+              </ul>
+          </li>
+          
+      </ul>
+
+          </nav>
+      </aside>
+
+        <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc" data-bs-offset="0" tabindex="0">
+            <h1 class="post-title">GB2312中文转拼音</h1>
+
+            <div class="post-meta">
+                
+                <div>
+                作者 <img width="32" height="32" alt=""
+                    class="post-avatar" src="../static/avatars/ryan.jpg" />
+                <span class="post-author">Ryan Liu</span>
+                
+                发表于 <span class="post-date">2012-03-31</span>
+                </div>
+                <div>标签 
+                <span class="tags">
+                    <a class="post-tag" href="../tags/python.html">python</a>
+                
+                    <a class="post-tag" href="../tags/pinyin.html">pinyin</a>
+                </span>
+                </div>
+            </div>
+
+            <div class="post-body">
+            <p>只能转为常见音，不能处理多音字，也不带声调</p>
+
+<p>支持只找每个字的首字母和中英文混合</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+
+from bisect import bisect
+
+
+FIRST_LETTERS = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, &quot;n&quot;,
+          &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;]
+FIRST_NUMBERS = [1, 37, 233, 478, 674, 702, 833, 994, 1187, 1506, 1612, 1872,
+            2035, 2122, 2130, 2258, 2427, 2486, 2790, 2958, 3084, 3325, 3649]
+PINYIN_LETTERS = [
+    ['a', 'ai', 'an', 'ang', 'ao'],
+    ['ba', 'bai', 'ban', 'bang', 'bao', 'bei', 'ben', 'beng', 'bi', 'bian', 'biao', 'bie', 'bin', 'bing', 'bo', 'bu'],
+    ['ca', 'cai', 'can', 'cang', 'cao', 'ce', 'ceng', 'cha', 'chai', 'chan', 'chang', 'chao', 'che', 'chen', 'cheng', 'chi', 'chong', 'chou', 'chu', 'chuan', 'chuang', 'chui', 'chun', 'chuo', 'ci', 'cong', 'cou', 'cu', 'cuan', 'cui', 'cun', 'cuo'],
+    ['da', 'dai', 'dan', 'dang', 'dao', 'de', 'deng', 'di', 'dian', 'diao', 'die', 'ding', 'diu', 'dong', 'dou', 'du', 'duan', 'dui', 'dun', 'duo'],
+    ['e', 'en', 'er'],
+    ['fa', 'fan', 'fang', 'fei', 'fen', 'feng', 'fo', 'fou', 'fu'],
+    ['ga', 'gai', 'gan', 'gang', 'gao', 'ge', 'gei', 'gen', 'geng', 'gong', 'gou', 'gu', 'gua', 'guai', 'guan', 'guang', 'gui', 'gun', 'guo'],
+    ['ha', 'hai', 'han', 'hang', 'hao', 'he', 'hei', 'hen', 'heng', 'hong', 'hou', 'hu', 'hua', 'huai', 'huan', 'huang', 'hui', 'hun', 'huo'],
+    ['ji', 'jia', 'jian', 'jiang', 'jiao', 'jie', 'jin', 'jing', 'jiong', 'jiu', 'ju', 'juan', 'jue', 'jun'],
+    ['ka', 'kai', 'kan', 'kang', 'kao', 'ke', 'ken', 'keng', 'kong', 'kou', 'ku', 'kua', 'kuai', 'kuan', 'kuang', 'kui', 'kun', 'kuo'],
+    ['la', 'lai', 'lan', 'lang', 'lao', 'le', 'lei', 'leng', 'li', 'lia', 'lian', 'liang', 'liao', 'lie', 'lin', 'ling', 'liu', 'long', 'lou', 'lu', 'lv', 'lue', 'lv', 'lu', 'luan', 'lue', 'lun', 'luo'],
+    ['ma', 'mai', 'man', 'mang', 'mao', 'me', 'mei', 'men', 'meng', 'mi', 'mian', 'miao', 'mie', 'min', 'ming', 'miu', 'mo', 'mou', 'mu'],
+    ['na', 'nai', 'nan', 'nang', 'nao', 'ne', 'nei', 'nen', 'neng', 'ni', 'nian', 'niang', 'niao', 'nie', 'nin', 'ning', 'niu', 'nong', 'nu', 'nv', 'nuan', 'nue', 'nuo'],
+    ['o', 'ou'],
+    ['pa', 'pai', 'pan', 'pang', 'pao', 'pei', 'pen', 'peng', 'pi', 'pian', 'piao', 'pie', 'pin', 'ping', 'po', 'pou', 'pu'],
+    ['qi', 'qia', 'qian', 'qiang', 'qiao', 'qie', 'qin', 'qing', 'qiong', 'qiu', 'qu', 'quan', 'que', 'qun'],
+    ['ran', 'rang', 'rao', 're', 'ren', 'reng', 'ri', 'rong', 'rou', 'ru', 'ruan', 'rui', 'run', 'ruo'],
+    ['sa', 'sai', 'san', 'sang', 'sao', 'se', 'sen', 'seng', 'sha', 'shai', 'shan', 'shang', 'shao', 'she', 'shen', 'sheng', 'shi', 'shou', 'shu', 'shua', 'shuai', 'shuan', 'shuang', 'shui', 'shun', 'shuo', 'si', 'song', 'sou', 'su', 'suan', 'sui', 'sun', 'suo'],
+    ['ta', 'tai', 'tan', 'tang', 'tao', 'te', 'teng', 'ti', 'tian', 'tiao', 'tie', 'ting', 'tong', 'tou', 'tu', 'tuan', 'tui', 'tun', 'tuo'],
+    ['wa', 'wai', 'wan', 'wang', 'wei', 'wen', 'weng', 'wo', 'wu'],
+    ['xi', 'xia', 'xian', 'xiang', 'xiao', 'xie', 'xin', 'xing', 'xiong', 'xiu', 'xu', 'xuan', 'xue', 'xun'],
+    ['ya', 'yan', 'yang', 'yao', 'ye', 'yi', 'yin', 'ying', 'yo', 'yong', 'you', 'yu', 'yuan', 'yue', 'yun'],
+    ['za', 'zai', 'zan', 'zang', 'zao', 'ze', 'zeng', 'zha', 'zhai', 'zhan', 'zhang', 'zhao', 'zhe', 'zhen', 'zheng', 'zhi', 'zhong', 'zhou', 'zhu', 'zhua', 'zhuai', 'zhuan', 'zhuang', 'zhui', 'zhun', 'zhuo', 'zi', 'zong', 'zou', 'zu', 'zuan', 'zui', 'zun', 'zuo']
+]
+PINYIN_NUMBERS = [
+    [2, 3, 16, 25, 28],
+    [37, 55, 63, 78, 90, 113, 128, 132, 138, 162, 174, 178, 182, 188, 203, 222],
+    [233, 234, 245, 252, 257, 262, 267, 269, 280, 283, 293, 312, 321, 327, 337, 352, 368, 373, 385, 408, 415, 421, 426, 433, 435, 447, 453, 454, 458, 461, 469, 472],
+    [478, 484, 502, 517, 522, 534, 537, 544, 563, 579, 588, 601, 610, 611, 621, 629, 643, 649, 653, 662],
+    [674, 687, 688],
+    [702, 710, 727, 738, 750, 765, 780, 781, 782],
+    [833, 835, 841, 852, 861, 871, 888, 889, 891, 904, 919, 928, 946, 952, 955, 966, 969, 985, 988],
+    [994, 1001, 1008, 1027, 1030, 1039, 1057, 1059, 1063, 1068, 1077, 1084, 1108, 1117, 1122, 1136, 1150, 1171, 1177],
+    [1187, 1246, 1263, 1309, 1322, 1350, 1377, 1403, 1428, 1430, 1447, 1472, 1479, 1489],
+    [1506, 1510, 1515, 1521, 1528, 1532, 1547, 1551, 1553, 1557, 1561, 1568, 1573, 1577, 1579, 1587, 1604, 1608],
+    [1612, 1619, 1622, 1637, 1644, 1653, 1655, 1666, 1669, 1709, 1710, 1724, 1735, 1748, 1753, 1765, 1779, 1790, 1805, 1811, 1831, 1842, 1843, 1844, 1845, 1851, 1853, 1860],
+    [1872, 1881, 1887, 1902, 1908, 1920, 1921, 1937, 1940, 1948, 1962, 1971, 1979, 1981, 1987, 1993, 1994, 2017, 2020],
+    [2035, 2042, 2047, 2050, 2051, 2056, 2057, 2059, 2060, 2061, 2072, 2080, 2081, 2083, 2090, 2091, 2103, 2107, 2111, 2114, 2115, 2116, 2119],
+    [2122, 2123],
+    [2130, 2136, 2142, 2150, 2155, 2162, 2171, 2173, 2187, 2210, 2214, 2218, 2220, 2225, 2234, 2243, 2244],
+    [2258, 2294, 2303, 2325, 2333, 2348, 2353, 2364, 2377, 2379, 2387, 2407, 2417, 2425],
+    [2427, 2431, 2436, 2439, 2441, 2451, 2453, 2454, 2464, 2467, 2477, 2479, 2482, 2484],
+    [2486, 2489, 2493, 2503, 2506, 2510, 2513, 2514, 2515, 2524, 2526, 2542, 2550, 2561, 2573, 2589, 2606, 2653, 2663, 2702, 2704, 2708, 2710, 2713, 2717, 2721, 2725, 2741, 2749, 2753, 2765, 2768, 2779, 2782],
+    [2790, 2805, 2814, 2832, 2845, 2856, 2857, 2861, 2876, 2884, 2889, 2892, 2908, 2921, 2925, 2936, 2938, 2944, 2947],
+    [2958, 2965, 2967, 2984, 2994, 3033, 3043, 3046, 3055],
+    [3084, 3125, 3138, 3164, 3184, 3208, 3229, 3239, 3254, 3261, 3270, 3289, 3305, 3311],
+    [3325, 3341, 3374, 3391, 3412, 3427, 3480, 3502, 3520, 3521, 3536, 3556, 3607, 3627, 3637],
+    [3649, 3652, 3659, 3663, 3666, 3680, 3686, 3690, 3710, 3716, 3733, 3748, 3758, 3768, 3784, 3805, 3848, 3859, 3873, 3905, 3907, 3908, 3914, 3921, 3927, 3929, 3940, 3955, 3962, 3966, 3974, 3976, 3980, 3982]
+]
+
+
+def gb2312_pinyin(unichar, first_letter=False):
+    assert(isinstance(unichar, unicode))
+    gbkchar = unichar.encode(&quot;GBK&quot;)
+    high_code = ord(gbkchar[0]) - 160  #GBK区码
+    low_code = ord(gbkchar[1]) - 160   #GBK位码
+    char_code = (high_code - 16) * 100 + low_code
+    if -1299 &lt;= char_code &lt;= -1206:
+        return chr(char_code + 1332) #全角转半角
+    elif char_code &lt; 1 or char_code &gt; 3989:
+        return &quot;&quot; #不是汉字，或者未被GB2312收录的生僻字
+
+    idx = bisect(FIRST_NUMBERS, char_code)
+    if first_letter: #找首字母
+        result = FIRST_LETTERS[idx - 1]
+    else: #完整拼音
+        inidx = bisect(PINYIN_NUMBERS[idx - 1], char_code)
+        result = PINYIN_LETTERS[idx - 1][inidx - 1]
+    return result
+
+
+def to_unicode(word):
+    if not isinstance(word, unicode):
+        try: #尝试当作UTF-8编码转为UNICODE
+            word = unicode(word, &quot;UTF-8&quot;)
+        except UnicodeDecodeError:
+            try: #尝试当作GBK编码转为UNICODE
+                word = unicode(word, &quot;GBK&quot;)
+            except UnicodeDecodeError:
+                word = &quot;&quot;
+    return word
+
+
+def split_sentence(sentence):
+    &quot;&quot;&quot; 将中英文混合的句子分割成单个汉字和连续英文 &quot;&quot;&quot;
+    word = &quot;&quot;
+    for character in sentence:
+        if ord(character) &lt;= 255: #ASCII
+            word += character
+        else:
+            yield True, word
+            word = &quot;&quot;
+            yield False, character
+    yield True, word
+
+
+def words_to_pinyin(words, first_letter=False, seperator=&quot;&quot;):
+    uniwords = to_unicode(words)
+    letters = []
+    for is_ascii, word in split_sentence(uniwords):
+        if word:
+            if not is_ascii:
+                word = gb2312_pinyin(word, first_letter)
+            letters.append(word)
+    return seperator.join(letters)
+
+
+def words_pinyin_for_sort(words, first_letter=False):
+    uniwords = to_unicode(words)
+    word_pinyin = words_to_pinyin(uniwords, first_letter, seperator=&quot;~&quot;)
+    if len(uniwords) &gt; 0 and ord(uniwords[0]) &gt; 255:
+        word_pinyin = &quot;~&quot; + word_pinyin
+    return word_pinyin
+
+
+if &quot;__main__&quot;==__name__:
+    print words_to_pinyin(&quot;好V5的中文&quot;, first_letter=True)
+    print words_to_pinyin(&quot;好V5的中文！&quot;, seperator=&quot; &quot;)
+    print words_pinyin_for_sort(&quot;好V5的中文！&quot;)
+</code></pre>
+
+            <div>
+        </div>
+
+    </div>
+</div></main>
+
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+(() => {
+    'use strict'
+
+    document.querySelectorAll("#article-nav a.art-link").forEach(element => {
+        let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("python/python-pinyin.html"))
+        if (url.endsWith("python/python-pinyin.html")) {
+            // element.classList.add("active")
+            element.style.color = "#f97316"
+        }
+    })
+})()
+</script>
+</body>
+</html>

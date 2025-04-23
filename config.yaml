@@ -1,0 +1,11 @@
+title: 阿债的技术存档
+theme: default
+port: 8080
+sort: date
+top_tags: [php, python]
+
+authors:
+    ryan:
+        name: Ryan Liu
+        avatar: static/avatars/ryan.jpg
+        intro:
