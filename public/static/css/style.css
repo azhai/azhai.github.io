@@ -241,3 +241,16 @@ button.navbar-toggler{border:0;height:100%;}
 .navbar-brand img{margin-top:-.15rem;margin-right:.75rem;transform:scale(1.75);}
 :root,[data-bs-theme=light]{--code-block-color:#000;--code-block-bg-color:#f5f5f5;--syntax-highlighting-kw-color:#8959a8;--syntax-highlighting-kw-2-color:#4271ae;--syntax-highlighting-lifetime-color:#b76514;--syntax-highlighting-prelude-val-color:#c82829;--syntax-highlighting-number-color:#718c00;--syntax-highlighting-string-color:#718c00;--syntax-highlighting-literal-color:#c82829;--syntax-highlighting-annotation-color:#c82829;--syntax-highlighting-macro-color:#3e999f;--syntax-highlighting-question-mark-color:#ff9011;--syntax-highlighting-comment-color:#8e908c;--syntax-highlighting-doc-comment-color:#4d4d4c;}
 [data-bs-theme=dark]{--code-block-color:#ddd;--code-block-bg-color:#2a2a2a;--syntax-highlighting-kw-color:#ab8ac1;--syntax-highlighting-kw-2-color:#769acb;--syntax-highlighting-lifetime-color:#d97f26;--syntax-highlighting-prelude-val-color:#ee6868;--syntax-highlighting-string-color:#83a300;--syntax-highlighting-number-color:#83a300;--syntax-highlighting-literal-color:#ee6868;--syntax-highlighting-annotation-color:#ee6868;--syntax-highlighting-macro-color:#3e999f;--syntax-highlighting-question-mark-color:#ff9011;--syntax-highlighting-comment-color:#8d8d8b;--syntax-highlighting-doc-comment-color:#8ca375;}
+footer{display:block;bottom:0;}
+.text-start{text-align:left;}
+.text-decoration-none{text-decoration:none;}
+.text-body-secondary{--bs-text-opacity:1;color:var(--bs-secondary-color);}
+@media (width>=992px){
+.mx-lg-auto{margin-left:auto;margin-right:auto;}
+.text-lg-center{text-align:center;}
+}
+.theme-bg{color:#f8f9fa;background-color:#0f172a;}
+.theme-bg a, .theme-bg span{color:#fff;margin:0 .5em}
+.theme-bg a:hover{color:#d6dade;}
+:target{background-color:#f973164d;scroll-margin-top:1rem;}
+.py-3{padding-top:1rem;padding-bottom:1rem;}
