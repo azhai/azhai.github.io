@@ -60,7 +60,7 @@
     </div>
 </div></main>
 
-{{template "_foot.html" .}}
+{{template "_footer.html" .}}
 
 <script src="{{.UrlPre}}/static/js/bootstrap.min.js"></script>
 <script src="{{.UrlPre}}/static/js/highlight.js"></script>
@@ -71,7 +71,6 @@
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
-        // console.log(url, url.endsWith("{{.Blog.Archive.Url}}"))
         if (url.endsWith("{{.Blog.Archive.Url}}")) {
             // element.classList.add("active")
             element.style.color = "#f97316"
