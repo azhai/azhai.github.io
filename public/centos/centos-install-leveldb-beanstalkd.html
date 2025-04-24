@@ -483,7 +483,6 @@ php-fpm -c /etc/php5/fpm/php.ini -y /etc/php5/fpm/php-fpm.conf -D
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
-        // console.log(url, url.endsWith("centos/centos-install-leveldb-beanstalkd.html"))
         if (url.endsWith("centos/centos-install-leveldb-beanstalkd.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

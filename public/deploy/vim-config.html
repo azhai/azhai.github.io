@@ -535,7 +535,6 @@ Ctrl + ^          快速切换到编辑器中切换前的文件</p>
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
-        // console.log(url, url.endsWith("deploy/vim-config.html"))
         if (url.endsWith("deploy/vim-config.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"
