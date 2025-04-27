@@ -522,6 +522,7 @@ if &quot;__main__&quot;==__name__:
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("python/python-pinyin.html"))
         if (url.endsWith("python/python-pinyin.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

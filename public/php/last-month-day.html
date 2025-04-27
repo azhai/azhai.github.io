@@ -413,6 +413,7 @@ echo last_month_day($time) . &quot;\n&quot;;
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("php/last-month-day.html"))
         if (url.endsWith("php/last-month-day.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

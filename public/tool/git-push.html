@@ -457,6 +457,7 @@ git checkout working   --force
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("tool/git-push.html"))
         if (url.endsWith("tool/git-push.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

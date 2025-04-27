@@ -458,6 +458,7 @@ if ($_SERVER['argc'] &lt;= 2) { #/usr/local/bin/phpunit ./bootstrap.php
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("php/phpunit-boot.html"))
         if (url.endsWith("php/phpunit-boot.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

@@ -419,6 +419,7 @@
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("deploy/samba-conf.html"))
         if (url.endsWith("deploy/samba-conf.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

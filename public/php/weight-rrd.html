@@ -444,6 +444,7 @@ function round_robin($hosts, &amp;$result)
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("php/weight-rrd.html"))
         if (url.endsWith("php/weight-rrd.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

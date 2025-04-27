@@ -485,6 +485,7 @@ echo &quot;\n&quot;;
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("php/calc-24-points.html"))
         if (url.endsWith("php/calc-24-points.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

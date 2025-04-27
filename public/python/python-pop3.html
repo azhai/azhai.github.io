@@ -433,6 +433,7 @@ if __name__ == &quot;__main__&quot;:
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("python/python-pop3.html"))
         if (url.endsWith("python/python-pop3.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"

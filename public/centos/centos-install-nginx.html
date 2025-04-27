@@ -494,6 +494,7 @@ nginx -s reload
 
     document.querySelectorAll("#article-nav a.art-link").forEach(element => {
         let url = element.getAttribute("href")
+        // console.log(url, url.endsWith("centos/centos-install-nginx.html"))
         if (url.endsWith("centos/centos-install-nginx.html")) {
             // element.classList.add("active")
             element.style.color = "#f97316"
