@@ -2,10 +2,17 @@ title: 阿债的技术存档
 theme: default
 port: 8080
 sort: date
+show_toc: true
 top_tags: [php, python]
+github: https://github.com/azhai
 
 authors:
     ryan:
         name: Ryan Liu
         avatar: static/avatars/ryan.jpg
         intro:
+
+footer:
+    copyright:
+    from_year:
+    cn_cert_no:
