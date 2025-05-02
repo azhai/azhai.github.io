@@ -109,10 +109,11 @@
 </nav>
 
 
-<main><div class="container">
-    <div class="row">
+<main>
+    <div class="container">
+        <div class="row">
 
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
     <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="ft-guide-chapters-label">边栏</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#ft-guide-chapters"></button>
@@ -229,150 +230,169 @@
 </div>
 
 
-      <aside class="d-none d-lg-block mt-3 me-xxl-5 col-auto sticky-sidebar">
-        <nav class="w-100 guide-chapters" aria-label="文章列表">
+            <aside class="d-none d-lg-block me-xxl-5 col-auto sticky-sidebar">
+    <nav class="w-100 guide-chapters" aria-label="文章列表">
 
-      <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
-                  
-                  <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
-                  
-                  <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
-                  
-                  <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
-                  
-                  <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
-                  
-                  <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
-                  
-                  <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
-                  
-                  <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
-                  
-                  <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
-                  
-                  <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
-                  
-                  <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
-                  
-                  <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
-                  
-                  <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
-                  
-                  <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
-                  
-                  <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
-                  
-                  <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
-                  
-                  <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
-                  
-                  <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
-                  
-                  <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
-                  
-                  <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
-                  
-                  <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
-                  
-                  <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
-                  
-                  <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
-                  
-                  <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
-                  
-                  <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
-                  
-                  <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
-                  
-                  <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
-                  
-                  <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
-                  
-              </ul>
-          </li>
-          
-      </ul>
+        <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+                    
+                    <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+                    
+                    <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+                    
+                    <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+                    
+                    <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+                    
+                    <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+                    
+                    <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+                    
+                    <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+                    
+                    <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+                    
+                    <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+                    
+                    <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+                    
+                    <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+                    
+                    <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+                    
+                    <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+                    
+                    <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+                    
+                    <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+                    
+                    <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+                    
+                    <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+                    
+                    <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+                    
+                    <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+                    
+                    <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+                    
+                    <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+                    
+                    <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+                    
+                    <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+                    
+                    <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+                    
+                    <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+                    
+                    <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+                    
+                    <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
 
-          </nav>
-      </aside>
+    </nav>
+</aside>
 
-        <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc" data-bs-offset="0" tabindex="0">
-            <h1 class="post-title">VIM配置</h1>
 
-            <div class="post-meta">
-                
-                <div>
-                作者 <img width="32" height="32" alt=""
-                    class="post-avatar" src="../static/avatars/ryan.jpg" />
-                <span class="post-author">Ryan Liu</span>
-                
-                发表于 <span class="post-date">2013-04-11</span>
-                </div>
-                <div>标签 
-                <span class="tags">
-                    <a class="post-tag" href="../tags/vim.html">vim</a>
-                </span>
-                </div>
-            </div>
-
-            <div class="post-body">
-            <nav>
-
-<ul>
+            
+            <div class="col-12 col-lg-auto order-lg-last ft-toc sticky-sidebar mt-1 ms-xxl-5 px-sm-1 text-body-secondary">
+                <button class="btn btn-secondary d-lg-none collapsed ft-page-toc-toggle" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#ft-toc-nav" aria-expanded="false"
+                        aria-controls="ft-toc-nav">
+                    大纲
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"></path>
+                    </svg>
+                </button>
+                <strong class="d-none d-lg-block h6 my-2 ms-2">大纲</strong>
+                <hr class="d-none d-lg-block my-2">
+                <div class="collapse" id="ft-toc-nav">
+                    <nav id="page-toc">
+                        <ul>
 <li>
-<ul>
-<li><a href="#toc_0">vim配置文件 ~/.vimrc</a></li>
-
-<li><a href="#toc_1">常用操作</a></li>
-</ul></li>
+<a href="#vim-vimrc">vim配置文件 ~/.vimrc</a></li>
+<li>
+<a href="#heading">常用操作</a></li>
 </ul>
 
-</nav>
+                    </nav>
+                </div>
+            </div>
+            
 
-<h2 id="toc_0">vim配置文件 ~/.vimrc</h2>
+            <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc"
+                 data-bs-offset="0" tabindex="0">
+                <h1 class="post-title">VIM配置</h1>
 
+                <div class="post-meta">
+                    <div>
+                        
+                        作者 <img width="32" height="32" alt=""
+                                  class="post-avatar" src="../static/avatars/ryan.jpg"/>
+                        <span class="post-author">Ryan Liu</span>
+                        
+                        发表于 <span class="post-date">2013-04-11</span>
+                    </div>
+                    
+                    <div>标签 
+                        <span class="tags">
+                            <a class="post-tag" href="../tags/vim.html">vim</a>
+                        </span>
+                    </div>
+                    
+                </div>
+
+                <div class="post-body">
+                    
+<h2 id="vim-vimrc">vim配置文件 ~/.vimrc</h2>
 <pre><code class="language-vim">&quot; 设定配色方案
 &quot; colorscheme molokai
 &quot; 显示行号
@@ -423,96 +443,81 @@ set list
 set display=lastline
 
 </code></pre>
-
-<h2 id="toc_1">常用操作</h2>
-
+<h2 id="heading">常用操作</h2>
 <p>参考</p>
-
-<p><a href="http://arhat.blog.51cto.com/101503/114148]">毛渊的窝: vim(vi)常用操作及记忆方法</a></p>
-
+<p><a href="http://arhat.blog.51cto.com/101503/114148%5D">毛渊的窝: vim(vi)常用操作及记忆方法</a></p>
 <p><a href="http://www.cnblogs.com/moodlxs/archive/2012/03/24/2415526.html">绿色冰点: VIM常用操作, 插件和vimrc文件</a></p>
-
-<p>VI的三种模式
+<p>VI的三种模式<br />
 1，命令模式   2，输入模式   3，末行模式</p>
-
-<p>命令         执行的操作                 记忆方法
-:q             退出                     quit
-:w             存盘                     write
-:e             打开新文件
-:r             读取文件到VI             read
-:!             强行
-:set nu        显示行号                 number
+<p>命令         执行的操作                 记忆方法<br />
+:q             退出                     quit<br />
+:w             存盘                     write<br />
+:e             打开新文件<br />
+:r             读取文件到VI             read<br />
+:!             强行<br />
+:set nu        显示行号                 number<br />
 :set nonu      隐藏行号                 no number</p>
-
-<p>h     j     k     l
+<p>h     j     k     l<br />
 左    下    上    右</p>
-
-<p>Ctrl + f       翻到下一页（向前翻页）     front
-Ctrl + b       翻到上一页（向后翻页）     back
-Ctrl + u       向前翻半页
+<p>Ctrl + f       翻到下一页（向前翻页）     front<br />
+Ctrl + b       翻到上一页（向后翻页）     back<br />
+Ctrl + u       向前翻半页<br />
 Ctrl + d       向后翻半页</p>
-
-<p>^              移到行头          往上就到行头了（象形）
-$              移到行尾          写完一行就要给一行的钱
-w              下一个单词        word
-b              前一个单词        behind（在。。。后面）
-e              下一单词尾        end
-#G             跳到某一行        大哥(G)说到哪就到哪
-i              光标前插入        insert
-a              光标后加入        add
-A              在行末加入        在一个词后是小a,一个行后就是大A
-o              另起一行加入      一个小鸡蛋（小o）掉下来了摔开了花
+<p>^              移到行头          往上就到行头了（象形）<br />
+$              移到行尾          写完一行就要给一行的钱<br />
+w              下一个单词        word<br />
+b              前一个单词        behind（在。。。后面）<br />
+e              下一单词尾        end<br />
+#G             跳到某一行        大哥(G)说到哪就到哪<br />
+i              光标前插入        insert<br />
+a              光标后加入        add<br />
+A              在行末加入        在一个词后是小a,一个行后就是大A<br />
+o              另起一行加入      一个小鸡蛋（小o）掉下来了摔开了花<br />
 O              上一行加入        吐一个大泡泡（大O）飞上去破了</p>
-
-<p>－－－－－－－－－－ c（吃掉）代表行内删除－－－－－－－－
-cw       删除一个单词（一部分不包括空格）  吃掉一个 word
-c$       删除一行到行尾                    刚写的一行被删了，钱也拿不到了
-c^       删除一行到行头                    往上吃，一直吃到头
+<p>－－－－－－－－－－ c（吃掉）代表行内删除－－－－－－－－<br />
+cw       删除一个单词（一部分不包括空格）  吃掉一个 word<br />
+c$       删除一行到行尾                    刚写的一行被删了，钱也拿不到了<br />
+c^       删除一行到行头                    往上吃，一直吃到头<br />
 x        删除一个字符                      看你不爽就打上“x”</p>
-
-<p>－－－－－－－－－－ d 代表删除－－－－－－－－－－－－－－
-dd       删除一行                           del dir
-dw       删除单词到尾部（包括空格）         del word
-de       删除单词到尾部（不包括尾部空格）   del end
-d$       删除当前到行尾的所有字符           del $(代表尾部)
+<p>－－－－－－－－－－ d 代表删除－－－－－－－－－－－－－－<br />
+dd       删除一行                           del dir<br />
+dw       删除单词到尾部（包括空格）         del word<br />
+de       删除单词到尾部（不包括尾部空格）   del end<br />
+d$       删除当前到行尾的所有字符           del $(代表尾部)<br />
 d^       删除当前到行首的所有字符           del ^(代表行首)</p>
-
-<p>J       合并当前行                   一个大钩子(J)把下面的一行拉到自己行尾
-u       撤销上次操作                 undo
-U       撤销当前行所有操作           事情闹大了，得有个更大的UNDO才能恢复
+<p>J       合并当前行                   一个大钩子(J)把下面的一行拉到自己行尾<br />
+u       撤销上次操作                 undo<br />
+U       撤销当前行所有操作           事情闹大了，得有个更大的UNDO才能恢复<br />
 Ctrl + r    恢复undo 前              recover</p>
-
-<p>－－－－－－－－－ y 代表复制到缓存中－－－－－－－－－－－
-yy           复制当前行整行的内容到vi缓冲区
-yw           复制当前光标到单词尾字符的内容到vi缓冲区
-y$           复制当前光标到行尾的内容到vi缓冲区
-y^           复制当前光标到行首的内容到vi缓冲区
+<p>－－－－－－－－－ y 代表复制到缓存中－－－－－－－－－－－<br />
+yy           复制当前行整行的内容到vi缓冲区<br />
+yw           复制当前光标到单词尾字符的内容到vi缓冲区<br />
+y$           复制当前光标到行尾的内容到vi缓冲区<br />
+y^           复制当前光标到行首的内容到vi缓冲区<br />
 p            读取vi缓冲区中的内容，并粘贴到光标当前的位置（不覆盖文件已有的内容）</p>
-
-<p>/word       从上而下查              /是从上而下写的吧
-?word       从下而上查找            字符在哪儿呢（？）回头找找吧
-n           定位下一个匹配的        相当于向下查找下一个 next
+<p>/word       从上而下查              /是从上而下写的吧<br />
+?word       从下而上查找            字符在哪儿呢（？）回头找找吧<br />
+n           定位下一个匹配的        相当于向下查找下一个 next<br />
 N           定位上一个匹配的        相当于向上查找上一个</p>
-
-<p>:s/1/2          搜索当前行第一个1并用2代替      search
-:s/1/2/g        搜索当前行所有的1并用2代替      global
-:#,#s/1/2/g     在#,#间搜索所有1并用2替换
-:%s/1/2/g       在整个文档中将1替换为2          100％（全部）
+<p>:s/1/2          搜索当前行第一个1并用2代替      search<br />
+:s/1/2/g        搜索当前行所有的1并用2代替      global<br />
+:#,#s/1/2/g     在#,#间搜索所有1并用2替换<br />
+:%s/1/2/g       在整个文档中将1替换为2          100％（全部）<br />
 :s/1/2/c        每次替换都给出提示确认          cue提示</p>
-
-<p>vim 1.txt 2.txt 3.txt  同时打开多个文档
-:args             显示多文件信息(会在末行提示当前打开了哪些档)     are globals
-:next             切换到下一个文件
-:prev             切换到上一个文件
-:first            定位首文件
-:last             定位尾文件
+<p>vim 1.txt 2.txt 3.txt  同时打开多个文档<br />
+:args             显示多文件信息(会在末行提示当前打开了哪些档)     are globals<br />
+:next             切换到下一个文件<br />
+:prev             切换到上一个文件<br />
+:first            定位首文件<br />
+:last             定位尾文件<br />
 Ctrl + ^          快速切换到编辑器中切换前的文件</p>
+                <div>
 
-            <div>
+            </div>
+
         </div>
-
     </div>
-</div></main>
+</main>
 
 
 <footer class="border-top theme-bg mt-auto">
@@ -529,21 +534,21 @@ Ctrl + ^          快速切换到编辑器中切换前的文件</p>
 
 
 <script src="../static/js/bootstrap.min.js"></script>
-<script src="../static/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="../static/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script>
-(() => {
-    'use strict'
+    (() => {
+        'use strict'
 
-    document.querySelectorAll("#article-nav a.art-link").forEach(element => {
-        let url = element.getAttribute("href")
-        // console.log(url, url.endsWith("deploy/vim-config.html"))
-        if (url.endsWith("deploy/vim-config.html")) {
-            // element.classList.add("active")
-            element.style.color = "#f97316"
-        }
-    })
-})()
+        document.querySelectorAll("#article-nav a.art-link").forEach(element => {
+            let url = element.getAttribute("href")
+            // console.log(url, url.endsWith("deploy/vim-config.html"))
+            if (url.endsWith("deploy/vim-config.html")) {
+                // element.classList.add("active")
+                element.style.color = "#f97316"
+            }
+        })
+    })()
 </script>
 </body>
 </html>
