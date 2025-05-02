@@ -109,10 +109,11 @@
 </nav>
 
 
-<main><div class="container">
-    <div class="row">
+<main>
+    <div class="container">
+        <div class="row">
 
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="ft-guide-chapters" aria-labelledby="ft-guide-chapters-label" data-bs-theme="dark">
     <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="ft-guide-chapters-label">边栏</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#ft-guide-chapters"></button>
@@ -229,156 +230,174 @@
 </div>
 
 
-      <aside class="d-none d-lg-block mt-3 me-xxl-5 col-auto sticky-sidebar">
-        <nav class="w-100 guide-chapters" aria-label="文章列表">
+            <aside class="d-none d-lg-block me-xxl-5 col-auto sticky-sidebar">
+    <nav class="w-100 guide-chapters" aria-label="文章列表">
 
-      <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
-                  
-                  <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
-                  
-                  <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
-                  
-                  <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
-                  
-                  <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
-                  
-                  <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
-                  
-                  <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
-                  
-                  <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
-                  
-                  <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
-                  
-                  <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
-                  
-                  <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
-                  
-                  <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
-                  
-                  <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
-                  
-                  <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
-                  
-                  <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
-                  
-                  <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
-                  
-                  <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
-                  
-                  <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
-                  
-                  <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
-                  
-                  <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
-                  
-                  <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
-                  
-                  <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
-                  
-                  <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
-                  
-                  <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
-                  
-                  <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
-                  
-                  <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
-                  
-                  <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
-                  
-              </ul>
-          </li>
-          
-          <li class="py-2">
-              <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
-              <ul class="fw-normal pb-2 small">
-                  
-                  <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
-                  
-                  <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
-                  
-              </ul>
-          </li>
-          
-      </ul>
+        <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../centos/centos-install-lamp.html" class="art-link" title="2013-05-21">在CentOS上部署lamp环境</a></li>
+                    
+                    <li><a href="../centos/centos-install-leveldb-beanstalkd.html" class="art-link" title="2013-03-08">安装Linux开发环境之五 —— LevelDB、Beanstalkd</a></li>
+                    
+                    <li><a href="../centos/centos-install-mysql.html" class="art-link" title="2013-02-20">安装Linux开发环境之一 —— MySQL</a></li>
+                    
+                    <li><a href="../centos/centos-install-nginx.html" class="art-link" title="2013-02-20">安装Linux开发环境之三 —— Nginx</a></li>
+                    
+                    <li><a href="../centos/centos-install-php.html" class="art-link" title="2013-02-20">安装Linux开发环境之二 —— PHP</a></li>
+                    
+                    <li><a href="../centos/centos-install-redis.html" class="art-link" title="2013-02-20">安装Linux开发环境之四 —— Redis</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../deploy/install-postfix.html" class="art-link" title="2013-04-16">安装Postfix邮件服务器</a></li>
+                    
+                    <li><a href="../deploy/linux-upstart.html" class="art-link" title="2013-04-24">Linux新的守护进程方式upstart</a></li>
+                    
+                    <li><a href="../deploy/nginx-http-base-auth.html" class="art-link" title="2013-04-24">Nginx设置简单HTTP认证</a></li>
+                    
+                    <li><a href="../deploy/nginx-case-insensitive.html" class="art-link" title="2013-04-12">让Nginx对URL不区分大小写</a></li>
+                    
+                    <li><a href="../deploy/nginx-log-cookie.html" class="art-link" title="2013-04-23">Nginx记录访问cookie到日志</a></li>
+                    
+                    <li><a href="../deploy/nginx-logrotate.html" class="art-link" title="2013-06-09">Nginx日志按日期切割</a></li>
+                    
+                    <li><a href="../deploy/rsync-config.html" class="art-link" title="2013-04-12">Rsync配置与使用</a></li>
+                    
+                    <li><a href="../deploy/samba-conf.html" class="art-link" title="2013-07-08">Samba简单配置</a></li>
+                    
+                    <li><a href="../deploy/vim-config.html" class="art-link" title="2013-04-11">VIM配置</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../php/calc-24-points.html" class="art-link" title="2016-03-24">四则运算计算24点</a></li>
+                    
+                    <li><a href="../php/last-month-day.html" class="art-link" title="2016-03-24">找出上个月的这一天</a></li>
+                    
+                    <li><a href="../php/phpunit-boot.html" class="art-link" title="2014-04-10">启动PHPUnit测试的简便方式</a></li>
+                    
+                    <li><a href="../php/weight-rrd.html" class="art-link" title="2014-01-18">PHP权重轮询</a></li>
+                    
+                    <li><a href="../php/zf2-multiple-dbs.html" class="art-link" title="2013-03-21">Zend Framework 2 配置多个数据库</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../python/python-activestate-code.html" class="art-link" title="2016-03-25">ActiveState上一些Python优秀代码</a></li>
+                    
+                    <li><a href="../python/python-functions.html" class="art-link" title="2013-07-08">收集用过的一些Python方法</a></li>
+                    
+                    <li><a href="../python/python-gists.html" class="art-link" title="2016-03-24">Gist上一些Python的算法题</a></li>
+                    
+                    <li><a href="../python/python-md5.html" class="art-link" title="2012-05-15">Python计算文件的MD5</a></li>
+                    
+                    <li><a href="../python/python-mulpti-logging.html" class="art-link" title="2012-05-15">Python多进程记录日志</a></li>
+                    
+                    <li><a href="../python/python-paginate.html" class="art-link" title="2012-05-16">一个Python分页</a></li>
+                    
+                    <li><a href="../python/python-pinyin.html" class="art-link" title="2012-03-31">GB2312中文转拼音</a></li>
+                    
+                    <li><a href="../python/python-pop3.html" class="art-link" title="2012-03-04">通过POP3协议读取指定邮件</a></li>
+                    
+                    <li><a href="../python/python-pymssql-re2.html" class="art-link" title="2013-04-28">安装Python支持SqlServer和re2</a></li>
+                    
+                    <li><a href="../python/python-urlib.html" class="art-link" title="2012-05-16">Python网址操作函数</a></li>
+                    
+                </ul>
+            </li>
+            
+            <li class="py-2">
+                <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
+                <ul class="fw-normal pb-2 small">
+                    
+                    <li><a href="../tool/git-push.html" class="art-link" title="2012-05-15">正确使用git避免提交冲突</a></li>
+                    
+                    <li><a href="../tool/haskell-mysql-dumper.html" class="art-link" title="2015-05-20">MySQL导出CSV文件（Haskell实现）</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
 
-          </nav>
-      </aside>
+    </nav>
+</aside>
 
-        <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc" data-bs-offset="0" tabindex="0">
-            <h1 class="post-title">安装Linux开发环境之四 —— Redis</h1>
 
-            <div class="post-meta">
-                
-                <div>
-                作者 <img width="32" height="32" alt=""
-                    class="post-avatar" src="../static/avatars/ryan.jpg" />
-                <span class="post-author">Ryan Liu</span>
-                
-                发表于 <span class="post-date">2013-02-20</span>
-                </div>
-                <div>标签 
-                <span class="tags">
-                    <a class="post-tag" href="../tags/linux.html">linux</a>
-                
-                    <a class="post-tag" href="../tags/redis.html">redis</a>
-                </span>
-                </div>
-            </div>
-
-            <div class="post-body">
-            <nav>
-
-<ul>
+            
+            <div class="col-12 col-lg-auto order-lg-last ft-toc sticky-sidebar mt-1 ms-xxl-5 px-sm-1 text-body-secondary">
+                <button class="btn btn-secondary d-lg-none collapsed ft-page-toc-toggle" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#ft-toc-nav" aria-expanded="false"
+                        aria-controls="ft-toc-nav">
+                    大纲
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708m0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708"></path>
+                    </svg>
+                </button>
+                <strong class="d-none d-lg-block h6 my-2 ms-2">大纲</strong>
+                <hr class="d-none d-lg-block my-2">
+                <div class="collapse" id="ft-toc-nav">
+                    <nav id="page-toc">
+                        <ul>
 <li>
-<ul>
-<li><a href="#toc_0">安装Redis</a></li>
-
-<li><a href="#toc_1">启动Redis</a></li>
-
-<li><a href="#toc_2">安装phpredis</a></li>
-</ul></li>
+<a href="#redis">安装Redis</a></li>
+<li>
+<a href="#redis-1">启动Redis</a></li>
+<li>
+<a href="#phpredis">安装phpredis</a></li>
 </ul>
 
-</nav>
+                    </nav>
+                </div>
+            </div>
+            
 
-<h2 id="toc_0">安装Redis</h2>
+            <div class="col ft-guide mt-3 px-lg-3 px-xl-5" data-bs-spy="scroll" data-bs-target="#page-toc"
+                 data-bs-offset="0" tabindex="0">
+                <h1 class="post-title">安装Linux开发环境之四 —— Redis</h1>
 
+                <div class="post-meta">
+                    <div>
+                        
+                        作者 <img width="32" height="32" alt=""
+                                  class="post-avatar" src="../static/avatars/ryan.jpg"/>
+                        <span class="post-author">Ryan Liu</span>
+                        
+                        发表于 <span class="post-date">2013-02-20</span>
+                    </div>
+                    
+                    <div>标签 
+                        <span class="tags">
+                            <a class="post-tag" href="../tags/linux.html">linux</a>
+                        
+                            <a class="post-tag" href="../tags/redis.html">redis</a>
+                        </span>
+                    </div>
+                    
+                </div>
+
+                <div class="post-body">
+                    
+<h2 id="redis">安装Redis</h2>
 <p>下载 <a href="http://redis.googlecode.com/files/redis-2.6.12.tar.gz">redis-2.6.12</a> 解压并进入目录</p>
-
 <pre><code class="language-bash">wget http://redis.googlecode.com/files/redis-2.6.12.tar.gz
 tar xzf redis-2.6.12.tar.gz
 cd redis-2.6.12
@@ -390,9 +409,7 @@ fi
 make PREFIX=/opt/redis-2.6.12 install
 cd ..
 </code></pre>
-
-<h2 id="toc_1">启动Redis</h2>
-
+<h2 id="redis-1">启动Redis</h2>
 <pre><code class="language-bash">#复制配置
 mkdir /opt/redis-2.6.12/etc/
 cp redis-2.6.12/redis.conf /opt/redis-2.6.12/etc/
@@ -407,11 +424,8 @@ ln -s /opt/redis-2.6.12/bin/redis-cli /usr/bin/redis-cli
 #启动
 redis-server /opt/redis-2.6.12/etc/redis.conf
 </code></pre>
-
-<h2 id="toc_2">安装phpredis</h2>
-
+<h2 id="phpredis">安装phpredis</h2>
 <p>下载 <a href="https://github.com/nicolasff/phpredis/archive/2.2.2.tar.gz">phpredis-2.2.2.tar.gz</a> ，重命名为 phpredis-2.2.2.tar.gz，解压并进入目录</p>
-
 <pre><code class="language-bash">wget https://github.com/nicolasff/phpredis/archive/2.2.2.tar.gz \
 mv 2.2.2.tar.gz phpredis-2.2.2.tar.gz \
 tar xzf phpredis-2.2.2.tar.gz \
@@ -426,32 +440,33 @@ sed -i '1a\extension=redis.so' /etc/php5/fpm/php.ini
 ps -efww | grep php-fpm | grep -v grep | cut -c 9-15 | xargs kill -9
 php-fpm -c /etc/php5/fpm/php.ini -y /etc/php5/fpm/php-fpm.conf -D
 </code></pre>
+                <div>
 
-            <div>
+            </div>
+
         </div>
-
     </div>
-</div></main>
+</main>
 
 
 
 
 <script src="../static/js/bootstrap.min.js"></script>
-<script src="../static/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="../static/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script>
-(() => {
-    'use strict'
+    (() => {
+        'use strict'
 
-    document.querySelectorAll("#article-nav a.art-link").forEach(element => {
-        let url = element.getAttribute("href")
-        // console.log(url, url.endsWith("centos/centos-install-redis.html"))
-        if (url.endsWith("centos/centos-install-redis.html")) {
-            // element.classList.add("active")
-            element.style.color = "#f97316"
-        }
-    })
-})()
+        document.querySelectorAll("#article-nav a.art-link").forEach(element => {
+            let url = element.getAttribute("href")
+            // console.log(url, url.endsWith("centos/centos-install-redis.html"))
+            if (url.endsWith("centos/centos-install-redis.html")) {
+                // element.classList.add("active")
+                element.style.color = "#f97316"
+            }
+        })
+    })()
 </script>
 </body>
 </html>
