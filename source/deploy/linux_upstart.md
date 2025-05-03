@@ -12,8 +12,7 @@ weight:     230424
 现在Ubuntu和CentOS改用upstart（命令initctl），ArchLinux改用systemd（systemctl），除了开机启动时加载，
 还能守护进程，比python写的supervisor好用多了（这是个泥菩萨，常常自己挂掉了）。
 
-upstart配置方法
------------------
+## upstart配置方法
 环境：CentOS (v6.3 v6.4)
 先在/etc/init/下面写个.conf的配置文件，如PHP-FPM的：/etc/init/php-fpm.conf
 

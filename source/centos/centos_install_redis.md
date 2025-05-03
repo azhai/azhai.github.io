@@ -8,8 +8,7 @@ comments:   true
 weight:     130224
 ---
 
-安装Redis
-----------
+## 安装Redis
 下载 [redis-2.6.12](http://redis.googlecode.com/files/redis-2.6.12.tar.gz) 解压并进入目录
 
 ```bash
@@ -25,8 +24,7 @@ make PREFIX=/opt/redis-2.6.12 install
 cd ..
 ```
 
-启动Redis
-------------
+## 启动Redis
 ```bash
 #复制配置
 mkdir /opt/redis-2.6.12/etc/
@@ -43,8 +41,7 @@ ln -s /opt/redis-2.6.12/bin/redis-cli /usr/bin/redis-cli
 redis-server /opt/redis-2.6.12/etc/redis.conf
 ```
 
-安装phpredis
-------------
+## 安装phpredis
 下载 [phpredis-2.2.2.tar.gz](https://github.com/nicolasff/phpredis/archive/2.2.2.tar.gz) ，重命名为 phpredis-2.2.2.tar.gz，解压并进入目录
 
 ```bash

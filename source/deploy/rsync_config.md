@@ -8,8 +8,7 @@ comments:   true
 weight:     230412
 ---
 
-服务端
---------
+## 服务端
 安装rsync并创建配置目录和文件
 
 ```bash
@@ -67,8 +66,7 @@ comment = projects
 exclude = .svn/ *.rar
 ```
 
-客户端
--------
+## 客户端
 安装rsync并创建传输脚本
 
 ```bash

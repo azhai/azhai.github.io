@@ -124,7 +124,7 @@
 
 <ul class="mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -143,7 +143,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -168,7 +168,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -185,7 +185,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -212,7 +212,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -230,12 +230,12 @@
 </div>
 
 
-            <aside class="d-none d-lg-block me-xxl-5 col-auto sticky-sidebar">
+            <aside class="d-none d-lg-block me-xxl-5 col-auto">
     <nav class="w-100 guide-chapters" aria-label="文章列表">
 
         <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -254,7 +254,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -279,7 +279,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -296,7 +296,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -323,7 +323,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -400,11 +400,11 @@
 
                 <div class="post-body">
                     
-<h1 id="heading">为什么要写这个工具</h1>
+<h2 id="heading">为什么要写这个工具</h2>
 <p>2015年3月份写的一个Haskell的程序，实现和mysql命令select into outfile差不多的功能。mysql的命令只能把文件导出到本机，另一个工具mydumper也能实现差不多的功能。</p>
 <p>因为我需要简单地远程使用，又要比Navicat等界面工具使用更灵活。效率比mysql命令差一些，毕竟mysql的命令是C语言实现的，比Navicat好在可以自定义读取的字段和范围限制。</p>
 <p>最后吐槽一下Haskell，这个文件编译后居然达到18M多。跟py2exe打包的Python程序一样大了，那个程序用到了PySide，打包了Python、Qt、libsvn的运行库。</p>
-<h1 id="-hsdumphs">代码 hsdump.hs</h1>
+<h2 id="-hsdumphs">代码 hsdump.hs</h2>
 <pre><code class="language-haskell">{-# LANGUAGE OverloadedStrings #-}
 -- cabal update &amp;&amp; cabal install cabal-install
 -- cabal install cassava &amp;&amp; cabal install yaml-config &amp;&amp; cabal install hdbc-mysql &amp;&amp; cabal install missingH
@@ -558,7 +558,7 @@ main = do
     mapM_ (outputRecords outpath conn) tasks    -- 调用查询输出结果命令
     disconnect conn
 </code></pre>
-<h1 id="-taskyml">配置 task.yml</h1>
+<h2 id="-taskyml">配置 task.yml</h2>
 <pre><code class="language-ini">db:
     host:       localhost
     port:       3306

@@ -9,8 +9,7 @@ weight:     530708
 ---
 
 
-简化的samba配置 /etc/samba/smb.conf
-----------------------
+## 简化的samba配置 /etc/samba/smb.conf
 ```nginx
 #添加用户ryan，Samba不依赖于系统用户
 #gpasswd -a ryan

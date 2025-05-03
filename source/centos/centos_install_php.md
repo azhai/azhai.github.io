@@ -10,8 +10,7 @@ weight:     130222
 
 > 2013-4-15更新，使用v5.4.14，增加apc、xdebug和phpunit扩展
 
-安装必须组件
-------------
+## 安装必须组件
 下载 [libmcrypt-2.5.8.tar.gz](http://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fmcrypt%2Ffiles%2FLibmcrypt%2F2.5.8%2F&ts=1361339383&use_mirror=nchc) 并解压
 
 ```bash
@@ -28,8 +27,7 @@ make && make install
 cd ..
 ```
 
-安装PHP
-------------
+## 安装PHP
 下载 [php-5.4.14.tar.gz](http://cn2.php.net/get/php-5.4.14.tar.gz/from/this/mirror) 解压并进入目录
 
 ```bash
@@ -69,9 +67,7 @@ make && make install
 cd ..
 ```
 
-配置PHP
-------------
-
+## 配置PHP
 ```bash
 #建立软连接
 rm -rf /usr/sbin/php-fpm
@@ -117,8 +113,7 @@ sed -i '/^pm.min_spare_servers/cpm.min_spare_servers = 2' /etc/php5/fpm/php-fpm.
 sed -i '/^pm.max_spare_servers/cpm.max_spare_servers = 30' /etc/php5/fpm/php-fpm.conf
 ```
 
-管理PHP
-------------
+## 管理PHP
 ```bash
 #启动
 php-fpm -c /etc/php5/fpm/php.ini -y /etc/php5/fpm/php-fpm.conf -D
@@ -128,8 +123,7 @@ ps -efww | grep php-fpm | grep -v grep | cut -c 9-15 | xargs kill -9
 
 > 2013.3.5更新
 
-需要连接SQLServer
-------------
+## 需要连接SQLServer
 ```bash
 #先安装FreeTDS
 wget ftp://ftp.astron.com/pub/freetds/stable/freetds-stable.tgz

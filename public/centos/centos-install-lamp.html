@@ -124,7 +124,7 @@
 
 <ul class="mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -143,7 +143,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -168,7 +168,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -185,7 +185,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -212,7 +212,7 @@
         </ul>
     </li>
     
-    <li class="py-2">
+    <li>
         <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
         <ul class="fw-normal pb-2 small">
             
@@ -230,12 +230,12 @@
 </div>
 
 
-            <aside class="d-none d-lg-block me-xxl-5 col-auto sticky-sidebar">
+            <aside class="d-none d-lg-block me-xxl-5 col-auto">
     <nav class="w-100 guide-chapters" aria-label="文章列表">
 
         <ul id="article-nav" class="sidebar-nav mb-0 pb-3 pb-md-2 pe-lg-2 text-body-secondary">
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">centos</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -254,7 +254,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">deploy</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -279,7 +279,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">php</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -296,7 +296,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">python</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -323,7 +323,7 @@
                 </ul>
             </li>
             
-            <li class="py-2">
+            <li>
                 <strong class="d-flex w-100 align-items-center fw-semibold">tool</strong>
                 <ul class="fw-normal pb-2 small">
                     
@@ -358,11 +358,13 @@
                     <nav id="page-toc">
                         <ul>
 <li>
-<a href="#heading">描述</a></li>
+<a href="#heading">描述</a><ul>
 <li>
 <a href="#deploy-lampsh">脚本deploy_lamp.sh</a></li>
 <li>
 <a href="#libtrapsh">脚本lib.trap.sh</a></li>
+</ul>
+</li>
 </ul>
 
                     </nav>
@@ -411,7 +413,7 @@
 <li>php 5.4.14</li>
 <li>nginx 1.4.1</li>
 </ul>
-<h2 id="deploy-lampsh">脚本deploy_lamp.sh</h2>
+<h3 id="deploy-lampsh">脚本deploy_lamp.sh</h3>
 <pre><code class="language-bash">source &quot;lib.trap.sh&quot;
 
 username=&quot;ryan&quot;
@@ -835,7 +837,7 @@ download
 
 exit 0
 </code></pre>
-<h2 id="libtrapsh">脚本lib.trap.sh</h2>
+<h3 id="libtrapsh">脚本lib.trap.sh</h3>
 <pre><code class="language-bash">lib_name='trap'
 lib_version=20121026
 
