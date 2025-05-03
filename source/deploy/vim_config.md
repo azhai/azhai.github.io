@@ -9,8 +9,7 @@ weight:     230411
 ---
 
 
-vim配置文件 ~/.vimrc
-----------------------
+## vim配置文件 ~/.vimrc
 ```vim
 " 设定配色方案
 " colorscheme molokai
@@ -62,8 +61,7 @@ set list
 set display=lastline
 
 ```
-常用操作
--------------------
+## 常用操作
 参考
 
 [毛渊的窝: vim(vi)常用操作及记忆方法](http://arhat.blog.51cto.com/101503/114148])

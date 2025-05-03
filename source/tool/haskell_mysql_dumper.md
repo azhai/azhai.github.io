@@ -7,8 +7,7 @@ tags:       [mysql, haskell, dump, csv]
 weight:     950520
 ---
 
-为什么要写这个工具
-====================
+## 为什么要写这个工具
 
 2015年3月份写的一个Haskell的程序，实现和mysql命令select into outfile差不多的功能。mysql的命令只能把文件导出到本机，另一个工具mydumper也能实现差不多的功能。
 
@@ -16,8 +15,7 @@ weight:     950520
 
 最后吐槽一下Haskell，这个文件编译后居然达到18M多。跟py2exe打包的Python程序一样大了，那个程序用到了PySide，打包了Python、Qt、libsvn的运行库。
 
-代码 hsdump.hs
-=================
+## 代码 hsdump.hs
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
 -- cabal update && cabal install cabal-install
@@ -174,8 +172,7 @@ main = do
 ```
 
 
-配置 task.yml
-===============
+## 配置 task.yml
 ```ini
 db:
     host:       localhost

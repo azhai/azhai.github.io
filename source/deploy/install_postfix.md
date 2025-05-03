@@ -130,8 +130,6 @@ weight:     230416
 
 ## 启动、测试、过滤日志
 
-
-
     # 启动
     #如果没有chkconfig，请用sysv-rc-conf代替
     #apt-get install sysv-rc-conf

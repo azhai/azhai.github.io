@@ -8,8 +8,7 @@ comments:   true
 weight:     130521
 ---
 
-描述
------
+## 描述
 
 这里的lamp中web server用的是nginx而不是apache，但还是用传统的叫法lamp。
 环境 CentOS 6.4，我的是64位，但在32位上依然可用。
@@ -23,8 +22,7 @@ weight:     130521
 *  php 5.4.14
 *  nginx 1.4.1
 
-脚本deploy_lamp.sh
--------------------
+### 脚本deploy_lamp.sh
 ```bash
 source "lib.trap.sh"
 
@@ -450,8 +448,7 @@ download
 exit 0
 ```
 
-脚本lib.trap.sh
----------------
+### 脚本lib.trap.sh
 ```bash
 lib_name='trap'
 lib_version=20121026

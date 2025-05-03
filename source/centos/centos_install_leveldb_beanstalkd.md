@@ -8,8 +8,7 @@ comments:   true
 weight:     130308
 ---
 
-下载编译LevelDB备用
---------------------
+## 下载编译LevelDB备用
 ```bash
 wget http://leveldb.googlecode.com/files/leveldb-1.9.0.tar.gz
 tar xzf leveldb-1.9.0.tar.gz -C /opt/
@@ -19,8 +18,7 @@ ln -s /opt/leveldb-1.9.0/libleveldb.so.1.9 /usr/lib64/libleveldb.so
 cd -
 ```
 
-安装编译php-leveldb客户端
----------------------------
+### 安装编译php-leveldb客户端
 ```bash
 wget https://github.com/reeze/php-leveldb/archive/V0.1.1.tar.gz
 mv V0.1.1.tar.gz php-leveldb-0.1.1.tar.gz
@@ -34,8 +32,7 @@ cd ..
 
 参考 [https://github.com/nil-zhang/php-beanstalk/](https://github.com/nil-zhang/php-beanstalk/)
 
-下载安装Beanstalkd
---------------------
+## 下载安装Beanstalkd
 ```bash
 wget https://github.com/kr/beanstalkd/archive/v1.9.tar.gz
 mv v1.9.tar.gz beanstalkd-1.9.tar.gz
@@ -46,8 +43,7 @@ make && make install
 cd ..
 ```
 
-安装C客户端libbeanstalkclient
-------------------------------
+### 安装C客户端libbeanstalkclient
 ```bash
 #安装libtool
 yum install libtool
@@ -64,8 +60,7 @@ ldconfig
 cd ..
 ```
 
-安装PHP客户端
---------------
+## 安装PHP客户端
 ```bash
 wget https://github.com/nil-zhang/php-beanstalk/tarball/master --no-check-certificate
 mv master php-beanstalk.tar.gz
@@ -77,8 +72,7 @@ make && make install
 cd ..
 ```
 
-添加PHP扩展到php.ini，重启php-fpm服务
---------------------------------------
+### 添加PHP扩展到php.ini，重启php-fpm服务
 ```bash
 ln -s /opt/beanstalkd-1.9/bin/beanstalkd /usr/bin/beanstalkd
 sed -i '1aextension=leveldb.so' /etc/php5/fpm/php.ini

@@ -10,8 +10,7 @@ weight:     130223
 
 > 2013-4-15更新，使用v1.4.0，增加模块ngx_http_lower_upper_case
 
-安装Nginx
-----------
+## 安装Nginx
 下载  并解压
 
 下载 [nginx-1.4.0](http://nginx.org/download/nginx-1.4.0.tar.gz) 解压并进入目录
@@ -28,8 +27,7 @@ git clone https://github.com/replay/ngx_http_lower_upper_case.git \
     && cd ..
 ```
 
-配置Nginx
-----------
+## 配置Nginx
 ```bash
 cd /opt/nginx-1.4.0/conf/
 #替换主配置
@@ -57,8 +55,7 @@ nginx
 nginx -s reload
 ```
 
-Nginx的site配置文件
--------------------
+## Nginx的site配置文件
 ```nginx
 server {
     listen           80;
